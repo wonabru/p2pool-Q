@@ -1,0 +1,269 @@
+2014-03-13 16:38:23.980367 p2pool (version 13.4-16-g5ee3172-dirty)
+2014-03-13 16:38:23.981140 
+2014-03-13 16:38:23.981792 Testing bitcoind RPC connection to 'http://127.0.0.1:8882/' with username 'wonabru'...
+2014-03-13 16:38:24.029686 > Error while checking Bitcoin connection:
+2014-03-13 16:38:24.030027 > Traceback (most recent call last):
+2014-03-13 16:38:24.030289 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:24.030616 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:24.030729 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:24.031056 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:24.031316 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:24.031547 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:24.031811 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:24.032155 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:24.032388 > --- <exception caught here> ---
+2014-03-13 16:38:24.032809 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:24.033039 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:24.033281 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:24.033511 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:24.033814 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:24.034039 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:24.034265 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:24.034548 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:24.034843 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:24.035032 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:24.035227 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:24.035465 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:24.035660 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:24.035855 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:24.036068 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:24.036545 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:24.036760 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:24.036957 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:24.037141 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:24.037447 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:24.037635 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:24.037919 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:24.038200 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:24.038517 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:24.038799 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:24.039083 >     raise e
+2014-03-13 16:38:24.039384 > twisted.web.error.Error: 401 Authorization Required
+2014-03-13 16:38:25.042540 > Error while checking Bitcoin connection:
+2014-03-13 16:38:25.042727 > Traceback (most recent call last):
+2014-03-13 16:38:25.042913 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:25.043023 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:25.043129 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:25.043234 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:25.043336 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:25.043444 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:25.043547 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:25.043652 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:25.043753 > --- <exception caught here> ---
+2014-03-13 16:38:25.043855 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:25.043957 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:25.044061 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:25.044167 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:25.044265 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:25.044495 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:25.044600 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:25.044704 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:25.044806 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:25.044909 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:25.045010 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:25.045113 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:25.045215 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:25.045349 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:25.045456 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:25.045561 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:25.045663 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:25.045766 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:25.045867 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:25.045969 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:25.046071 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:25.046202 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:25.046336 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:25.046443 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:25.046544 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:25.046647 >     raise e
+2014-03-13 16:38:25.046750 > twisted.web.error.Error: 401 Authorization Required
+2014-03-13 16:38:26.049368 > Error while checking Bitcoin connection:
+2014-03-13 16:38:26.049528 > Traceback (most recent call last):
+2014-03-13 16:38:26.049649 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:26.049743 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:26.049832 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:26.060435 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:26.072375 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:26.089031 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:26.101111 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:26.112825 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:26.124740 > --- <exception caught here> ---
+2014-03-13 16:38:26.136689 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:26.148550 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:26.160597 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:26.174549 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:26.184490 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:26.197331 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:26.208820 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:26.221251 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:26.233287 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:26.244633 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:26.256929 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:26.268817 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:26.280562 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:26.299977 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:26.313092 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:26.325952 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:26.348622 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:26.365307 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:26.376863 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:26.389430 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:26.413277 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:26.437011 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:26.437237 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:26.437443 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:26.437597 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:26.437749 >     raise e
+2014-03-13 16:38:26.437896 > twisted.web.error.Error: 401 Authorization Required
+2014-03-13 16:38:27.441796 > Error while checking Bitcoin connection:
+2014-03-13 16:38:27.442008 > Traceback (most recent call last):
+2014-03-13 16:38:27.442142 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:27.442269 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:27.442392 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:27.442516 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:27.442638 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:27.442799 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:27.442922 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:27.452593 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:27.464694 > --- <exception caught here> ---
+2014-03-13 16:38:27.477206 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:27.488670 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:27.505490 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:27.521158 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:27.532861 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:27.544574 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:27.556949 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:27.568742 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:27.585138 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:27.599342 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:27.610689 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:27.624607 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:27.636894 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:27.648850 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:27.661430 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:27.676974 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:27.698703 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:27.721572 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:27.737104 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:27.753138 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:27.768805 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:27.789099 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:27.804612 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:27.820837 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:27.834099 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:27.845381 >     raise e
+2014-03-13 16:38:27.857624 > twisted.web.error.Error: 401 Authorization Required
+2014-03-13 16:38:28.873881 > Error while checking Bitcoin connection:
+2014-03-13 16:38:28.888659 > Traceback (most recent call last):
+2014-03-13 16:38:28.888887 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:28.889066 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:28.889837 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:28.890054 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:28.890946 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:28.891124 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:28.891286 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:28.891451 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:28.891610 > --- <exception caught here> ---
+2014-03-13 16:38:28.891878 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:28.892405 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:28.892579 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:28.892852 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:28.893022 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:28.893188 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:28.893345 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:28.893506 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:28.893662 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:28.893872 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:28.894037 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:28.894199 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:28.894356 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:28.894517 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:28.894678 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:28.894888 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:28.895054 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:28.895215 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:28.895371 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:28.895531 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:28.895688 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:28.895958 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:28.896127 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:28.896293 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:28.896623 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:28.896839 >     raise e
+2014-03-13 16:38:28.897004 > twisted.web.error.Error: 401 Authorization Required
+2014-03-13 16:38:29.903716 > Error while checking Bitcoin connection:
+2014-03-13 16:38:29.904171 > Traceback (most recent call last):
+2014-03-13 16:38:29.904724 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:29.905022 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:29.905278 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:29.905569 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:29.905930 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:29.906331 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:29.906714 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:29.907106 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:29.907460 > --- <exception caught here> ---
+2014-03-13 16:38:29.907843 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:29.908646 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:29.908884 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:29.909185 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:29.909443 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:29.929828 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:29.941679 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:29.952750 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:29.972217 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:29.985009 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:29.997107 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:30.009238 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:30.025265 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:30.041066 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:30.057136 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:30.077573 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:30.089405 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:30.104619 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:30.117466 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:30.129317 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:30.140605 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:30.156837 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:30.169501 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:30.181390 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:30.201337 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:30.213066 >     raise e
+2014-03-13 16:38:30.224799 > twisted.web.error.Error: 401 Authorization Required
+2014-03-13 16:38:31.239582 > Error while checking Bitcoin connection:
+2014-03-13 16:38:31.239757 > Traceback (most recent call last):
+2014-03-13 16:38:31.239892 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 545, in _runCallbacks
+2014-03-13 16:38:31.239995 >     current.result = callback(current.result, *args, **kw)
+2014-03-13 16:38:31.240093 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1095, in gotResult
+2014-03-13 16:38:31.240295 >     _inlineCallbacks(r, g, deferred)
+2014-03-13 16:38:31.240408 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:31.240506 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:31.240602 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:31.240699 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:31.240825 > --- <exception caught here> ---
+2014-03-13 16:38:31.240921 >   File "/home/wonabru/p2pool/p2pool/util/deferral.py", line 41, in f
+2014-03-13 16:38:31.241016 >     result = yield func(*args, **kwargs)
+2014-03-13 16:38:31.241110 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:31.241205 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:31.241298 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:31.241393 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:31.241487 >   File "/home/wonabru/p2pool/p2pool/bitcoin/helper.py", line 13, in check
+2014-03-13 16:38:31.241581 >     if not (yield net.PARENT.RPC_CHECK(bitcoind)):
+2014-03-13 16:38:31.241744 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:31.241874 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:31.241970 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:31.242065 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:31.242159 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 25, in <lambda>
+2014-03-13 16:38:31.242254 >     (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+2014-03-13 16:38:31.242349 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:31.242444 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:31.242537 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:31.242632 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:31.242725 >   File "/home/wonabru/p2pool/p2pool/bitcoin/networks.py", line 12, in check_genesis_block
+2014-03-13 16:38:31.242852 >     yield bitcoind.rpc_getblock(genesis_block_hash)
+2014-03-13 16:38:31.242947 >   File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1037, in _inlineCallbacks
+2014-03-13 16:38:31.243043 >     result = result.throwExceptionIntoGenerator(g)
+2014-03-13 16:38:31.243138 >   File "/usr/lib/python2.7/dist-packages/twisted/python/failure.py", line 382, in throwExceptionIntoGenerator
+2014-03-13 16:38:31.243232 >     return g.throw(self.type, self.value, self.tb)
+2014-03-13 16:38:31.243326 >   File "/home/wonabru/p2pool/p2pool/util/jsonrpc.py", line 126, in _http_do
+2014-03-13 16:38:31.243419 >     raise e
+2014-03-13 16:38:31.243512 > twisted.web.error.Error: 401 Authorization Required
