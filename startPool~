@@ -1,1 +1,0 @@
-python run_p2pool.py --bitcoind-rpc-port 8332 --bitcoind-p2p-port 8333 --outgoing-conns 10 --max-conns 1000 --give-author 0.0 --net qcoin wonabru vivivi
