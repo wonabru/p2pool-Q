@@ -1,4 +1,4 @@
 p2pool-Q
 ========
 
-p2pool fro Q-coin
+p2pool for Q-coin
