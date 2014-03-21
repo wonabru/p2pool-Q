@@ -8,8 +8,8 @@ from p2pool.util import math
 # changes can be done by changing one, then the other
 
 nets = dict(
-    qcoin=math.Object(
-        PARENT=networks.nets['qcoin'],
+    bitcoin=math.Object(
+        PARENT=networks.nets['bitcoin'],
         SHARE_PERIOD=30, # seconds
         CHAIN_LENGTH=24*60*60//10, # shares
         REAL_CHAIN_LENGTH=24*60*60//10, # shares
@@ -17,15 +17,15 @@ nets = dict(
         SPREAD=3, # blocks
         IDENTIFIER='fc70035c7a81bc6f'.decode('hex'),
         PREFIX='2472ef181efcd37b'.decode('hex'),
-        P2P_PORT=8883,
+        P2P_PORT=44333,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**32 - 1,
         PERSIST=True,
-        WORKER_PORT=8888,
-        BOOTSTRAP_ADDRS='tata.wonabru.com brat.wonabru.com wonabru.com'.split(' '),
+        WORKER_PORT=44332,
+        BOOTSTRAP_ADDRS='wonabru.com tata.wonabru.com brat.wonabru.com'.split(' '),
         ANNOUNCE_CHANNEL='#p2pool',
-        VERSION_CHECK=lambda v: 160600 <= v < 160600 or 160600 <= v,
-        VERSION_WARNING=lambda v: 'Upgrade Qcoin to >=1.6.6.6!' if v < 160600 else None,
+        VERSION_CHECK=lambda v: 90900 <= v < 1000000,
+        VERSION_WARNING=lambda v: 'Upgrade Bitcoin to >=0.9.9!' if v < 90900 else None,
     ),
     bitcoin_testnet=math.Object(
         PARENT=networks.nets['bitcoin_testnet'],
@@ -121,6 +121,26 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
         VERSION_WARNING=lambda v: 'Upgrade Terracoin to >= 0.8.0.1!' if v < 80001 else None,
+    ),
+
+    auroracoin=math.Object(
+        PARENT=networks.nets['auroracoin'],
+        SHARE_PERIOD=15, # seconds
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares
+        SPREAD=10, # blocks
+        IDENTIFIER='e037d5b8c69231ce'.decode('hex'),
+        PREFIX='7208c1a53ef621ce'.decode('hex'),
+        P2P_PORT=44333,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=True,
+        WORKER_PORT=44444,
+        BOOTSTRAP_ADDRS=''.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-plm',
+        VERSION_CHECK=lambda v: True,
+        VERSION_WARNING=lambda v: 'Upgrade PLM to >=0.9.9!' if v < 909000 else None,
     ),
 
 )

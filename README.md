@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 Requirements:
 -------------------------
 Generic:
-* Qcoin >=1.6.6.6
+* PLM >=0.9.9.9
 * Python >=2.6
 * Twisted >=10.0.0
 * python-argparse (for Python =2.6)
@@ -21,16 +20,16 @@ Windows:
 
 Running P2Pool:
 -------------------------
-To use P2Pool, you must be running your own local bitcoind. For standard
+To use P2Pool, you must be running your own local AuroraCoind. For standard
 configurations, using P2Pool should be as simple as:
 
-    python run_p2pool.py
+    python run_p2pool.py --net qcoin
 
-Then run your miner program, connecting to 127.0.0.1 on port 8882 with any
+Then run your miner program, connecting to 127.0.0.1 on port 12347 with any
 username and password.
 
 If you are behind a NAT, you should enable TCP port forwarding on your
-router. Forward port 8883 to the host running P2Pool.
+router. Forward port 12348 to the host running P2Pool.
 
 Run for additional options.
 
@@ -38,17 +37,21 @@ Run for additional options.
 
 Donations towards further development:
 -------------------------
-    1HwXt2Er7Ym7RDnmE2yAtjrJs7FRSxF7UF
+    MMmQaf6QZCWpqmdDfMHZpnc13qQRmhnkBH
+
+Official wiki :
+-------------------------
+https://en.bitcoin.it/wiki/P2Pool
 
 Alternate web front end :
 -------------------------
 * https://github.com/hardcpp/P2PoolExtendedFrontEnd
 
-Notes for Litecoin:
+Notes for AuroraCoin:
 =========================
 Requirements:
 -------------------------
-In order to run P2Pool with the Litecoin network, you would need to build and install the
+In order to run P2Pool with the AuroraCoin network, you would need to build and install the
 ltc_scrypt module that includes the scrypt proof of work code that Litecoin uses for hashes.
 
 Linux:
@@ -80,8 +83,9 @@ http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produ
 
 Running P2Pool:
 -------------------------
-Run P2Pool with the "--net litecoin" option.
-Run your miner program, connecting to 127.0.0.1 on port 8888.
+Run P2Pool with the "--net qcoin" option.
+Run your miner program, connecting to 127.0.0.1 on port 12347.
+Forward port 12348 to the host running P2Pool.
 
 Sponsors:
 -------------------------
@@ -90,9 +94,3 @@ Thanks to:
 * The Bitcoin Foundation for its generous support of P2Pool
 * The Litecoin Project for its generous donations to P2Pool
 
-=======
-p2pool-Q
-========
-
-p2pool for Q-coin
->>>>>>> f2e90381725254083aebaa3b5cf9958c64c4b84e

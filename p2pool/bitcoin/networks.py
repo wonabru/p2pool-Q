@@ -4,32 +4,23 @@ import platform
 from twisted.internet import defer
 
 from . import data
-from p2pool.util import math, pack, jsonrpc
-
-@defer.inlineCallbacks
-def check_genesis_block(bitcoind, genesis_block_hash):
-    try:
-        yield bitcoind.rpc_getblock(genesis_block_hash)
-    except jsonrpc.Error_for_code(-5):
-        defer.returnValue(False)
-    else:
-        defer.returnValue(True)
+from p2pool.util import math, pack
 
 nets = dict(
-    qcoin=math.Object(
+    bitcoin=math.Object(
         P2P_PREFIX='f9beb4d9'.decode('hex'),
-        P2P_PORT=8883,
+        P2P_PORT=8333,
         ADDRESS_VERSION=0,
-        RPC_PORT=8882,
+        RPC_PORT=8332,
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-            (yield check_genesis_block(bitcoind, '000000428415c356b5e89f524ec8dae90149bb1bace213d23289d6a99f7fb6bf')) and
+            'bitcoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
         SUBSIDY_FUNC=lambda height: 50*100000000 >> (height + 1)//210000,
         POW_FUNC=data.hash256,
         BLOCK_PERIOD=600, # s
-        SYMBOL='PLM',
-        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'Qcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/Qcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.Q'), 'qcoin.conf'),
+        SYMBOL='BTC',
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'Bitcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/Bitcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.bitcoin'), 'bitcoin.conf'),
         BLOCK_EXPLORER_URL_PREFIX='https://blockchain.info/block/',
         ADDRESS_EXPLORER_URL_PREFIX='https://blockchain.info/address/',
         TX_EXPLORER_URL_PREFIX='https://blockchain.info/tx/',
@@ -159,9 +150,9 @@ nets = dict(
         BLOCK_PERIOD=120, # s
         SYMBOL='TRC',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'Terracoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/Terracoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.terracoin'), 'terracoin.conf'),
-        BLOCK_EXPLORER_URL_PREFIX='http://trc.cryptocoinexplorer.com/block/',
-        ADDRESS_EXPLORER_URL_PREFIX='http://trc.cryptocoinexplorer.com/address/',
-        TX_EXPLORER_URL_PREFIX='http://trc.cryptocoinexplorer.com/tx/',
+        BLOCK_EXPLORER_URL_PREFIX='http://cryptocoinexplorer.com:3750/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://cryptocoinexplorer.com:3750/address/',
+        TX_EXPLORER_URL_PREFIX='http://cryptocoinexplorer.com:3750/tx/',
         SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**32 - 1),
         DUMB_SCRYPT_DIFF=1,
         DUST_THRESHOLD=1e8,
@@ -180,13 +171,34 @@ nets = dict(
         BLOCK_PERIOD=120, # s
         SYMBOL='tTRC',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'Terracoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/Terracoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.terracoin'), 'terracoin.conf'),
-        BLOCK_EXPLORER_URL_PREFIX='http://trc.cryptocoinexplorer.com/testnet/block/',
-        ADDRESS_EXPLORER_URL_PREFIX='http://trc.cryptocoinexplorer.com/testnet/address/',
-        TX_EXPLORER_URL_PREFIX='http://trc.cryptocoinexplorer.com/testnet/tx/',
+        BLOCK_EXPLORER_URL_PREFIX='http://cryptocoinexplorer.com:3750/testnet/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://cryptocoinexplorer.com:3750/testnet/address/',
+        TX_EXPLORER_URL_PREFIX='http://cryptocoinexplorer.com:3750/testnet/tx/',
         SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**32 - 1),
         DUMB_SCRYPT_DIFF=1,
         DUST_THRESHOLD=1e8,
     ),
+
+    auroracoin=math.Object(
+        P2P_PREFIX='fda4dc6c'.decode('hex'),
+        P2P_PORT=44333,
+        ADDRESS_VERSION=50,
+        RPC_PORT=44332,
+        POW_FUNC=data.hash256,
+        BLOCK_PERIOD=600, # s
+        SYMBOL='PLM',
+        RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
+            'auroracoinaddress' in (yield bitcoind.rpc_help()) and
+            (yield bitcoind.rpc_getinfo())['testnet']
+        )),
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'PLM') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/QCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.PLM'), 'QCoin.conf'),
+        BLOCK_EXPLORER_URL_PREFIX='http://blockexplorer.q-coin.org/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://blockexplorer.q-coin.org/address/',
+        TX_EXPLORER_URL_PREFIX='http://blockexplorer.q-coin.org/tx/',
+        SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
+        DUMB_SCRYPT_DIFF=2**16,
+        DUST_THRESHOLD=0.03e8,
+        ),
 
 )
 for net_name, net in nets.iteritems():
